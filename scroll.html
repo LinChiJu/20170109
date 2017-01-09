@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $("nav a").click(function(){
+            var _link= $(this).data("link");
+            var _offset = $("#"+_link).offset().top;
+            $("html,body").animate({
+                scrollTop:_offset
+            });
+        });
+    });
+    </script>
+    
+    <style>
+        #about,#works,#service,#contact{
+            height: 1000px;
+        }
+        #about{background-color: skyblue} 
+        #works{background-color: lightpink}
+        #service{background-color: coral}
+        #contact{background-color: greenyellow}
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <a href="#" data-link="about">About</a>
+        <a href="#"data-link="works">Works</a>
+        <a href="#"data-link="service">Aervice</a>
+        <a href="#"data-link="contact">Contact</a>
+    </nav>
+    <div id="about"></div>
+    <div id="works"></div>
+    <div id="service"></div>
+    <div id="contact"></div>
+</body>
+</html>
